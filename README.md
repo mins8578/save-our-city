@@ -101,6 +101,13 @@ WebServer-Project/
 └── settings.gradle
 ```
 ---
+### 파트별 구성
+
+| 프론트엔드 | 백엔드 | DB & infra |
+|:--:|:--:|:--:|
+| <img width="740" height="500" alt="Image" src="https://github.com/user-attachments/assets/cbda620d-c875-44ca-9574-af14a4ed2842" /> |<img width="700" height="400" alt="Image" src="https://github.com/user-attachments/assets/1ee92b6d-d529-43ff-ac12-cb675adbc9f9" /> | <img width="700" height="400" alt="Image" src="https://github.com/user-attachments/assets/09e552ec-cb71-4950-932f-f26079dfe9a3" /> |
+
+---
 ## 시연 동영상
 [![도시소멸 위기 알리미 앱](https://img.youtube.com/vi/QQN08lDmG3M/0.jpg)](https://www.youtube.com/watch?v=QQN08lDmG3M)
 ---
@@ -129,5 +136,12 @@ WebServer-Project/
 
 - 익명 기능을 적용하여, 글 작성 시 비밀번호를 입력하고 이후 해당 비밀번호로 본인 글을 수정하거나 삭제할 수 있습니다.
 ---
-
+### 참고자료
+- [NABIS 균형발전종합정보시스템](https://www.nabis.go.kr/)
+- [고성군 홈페이지](https://www.gwgs.go.kr/)
+- [영월군 홈페이지](https://www.yw.go.kr/www/index.do)
+- [태백시 홈페이지](https://www.taebaek.go.kr/www/index.do)
+- [카카오 맵 API](https://apis.map.kakao.com/)
+- Chat gpt
+- Claude ai
 
