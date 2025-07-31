@@ -1,0 +1,157 @@
+/* main.css */
+/* 강원도 소멸 위기 알리미 스타일시트 */
+
+/* 전체 공통 스타일 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* 지도 영역 스타일 */
+#map-container {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+/* 지도 툴팁 스타일 */
+.map-tooltip {
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 1000;
+    font-size: 14px;
+    max-width: 250px;
+}
+
+/* 지역 스타일 */
+.region {
+    stroke: #fff;
+    stroke-width: 0.5px;
+    transition: all 0.3s ease;
+}
+
+/* 강원도 지도 특화 색상 유지 */
+.default-region {
+    fill: #adb5bd;
+}
+
+.risk-high {
+    fill: #dc3545; /* 빨간색 - 고위험 */
+}
+
+.risk-medium {
+    fill: #ffc107; /* 노란색 - 위험 */
+}
+
+.risk-low {
+    fill: #17a2b8; /* 하늘색 - 주의 */
+}
+
+.risk-safe {
+    fill: #28a745; /* 초록색 - 안전 */
+}
+
+/* 고위험 지역 강조 효과 (강원도 전용) */
+.high-risk {
+    animation: pulse 1.5s infinite;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* 지도 범례 스타일 */
+.map-legend {
+    padding: 8px 0;
+}
+
+.legend-item {
+    font-size: 14px;
+}
+
+/* 데이터 테이블 스타일 */
+.table th {
+    font-weight: 600;
+    color: #495057;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* 카드 호버 효과 */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 모든 badge 통일 스타일 */
+.badge {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    line-height: 1.5;
+}
+
+.badge-risk {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    line-height: 1.5;
+    width: 60px; /* 💥 고정 폭 추가 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+/* 공통 애니메이션 */
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 반응형 조정 */
+@media (max-width: 767px) {
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .h5 {
+        font-size: 1.1rem;
+    }
+
+    #map-container {
+        height: 400px !important;
+    }
+}

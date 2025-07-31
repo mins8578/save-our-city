@@ -1,0 +1,73 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.14'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'war'  // WAR 패키징을 위한 플러그인
+}
+
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'  // Java 11 사용
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot 핵심 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'  // JPA 사용
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // JSP 관련 의존성
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl'
+
+    // MySQL 데이터베이스 의존성
+    runtimeOnly 'mysql:mysql-connector-java:8.0.33'
+
+    // 개발 도구
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // 롬복 - 보일러플레이트 코드 감소
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // JSON 처리
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'  // Java 8 날짜/시간 API 지원
+
+    // 유틸리티 라이브러리
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'commons-io:commons-io:2.11.0'
+
+    // 테스트 의존성
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'com.opencsv:opencsv:5.8'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// JSP 개발 시 Devtools 자동 리로딩 설정
+bootWar {
+    // 자동 리로드를 위한 Devtools 설정
+    requiresUnpack '**/tomcat-embed-*.jar'
+}
+
+// WAR 파일 설정 (선택 사항)
+war {
+    enabled = true
+    archiveFileName = "${rootProject.name}.war"
+}
